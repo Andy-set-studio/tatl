@@ -3,6 +3,8 @@ A tiny base component to guide you to a consistent Web Component authoring exper
 
 ⚠️ **Tatl is a work in progress and very unstable. Feedback and contributions are very much encouraged.** ⚠️
 
+**Demo** <https://tatl-demo.netlify.com>
+
 ## About
 
 Tatl is a base class for Web Components that gives you a clean, consistent structure, much like a [Vue](//vuejs.org) component.
