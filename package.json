@@ -2,7 +2,7 @@
   "name": "tatl",
   "version": "1.0.0",
   "description": "A tiny base component to guide you to a consistent Web Component authoring experience",
-  "main": "bundler.js",
+  "main": "dist/tatl.js",
   "scripts": {
     "dev:demo": "http-server demo",
     "prod:build": "node bundler.js"
