@@ -13,8 +13,7 @@ async function bundleJavaScript() {
   await bundle.write({
     format: 'umd',
     name: 'tatl',
-    file: 'tatl.js',
-    dir: `${__dirname}/dist/`
+    dir: `${__dirname}/dist`
   });
 }
 

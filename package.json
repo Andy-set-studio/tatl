@@ -1,0 +1,29 @@
+{
+  "name": "tatl",
+  "version": "1.0.0",
+  "description": "A tiny base component to guide you to a consistent Web Component authoring experience",
+  "main": "bundler.js",
+  "scripts": {
+    "dev:demo": "http-server demo",
+    "prod:build": "node bundler.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andybelldesign/tatl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andybelldesign/tatl/issues"
+  },
+  "homepage": "https://github.com/andybelldesign/tatl#readme",
+  "dependencies": {
+    "lit-html": "^1.0.0",
+    "rollup": "^1.4.1",
+    "rollup-plugin-uglify-es": "0.0.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
