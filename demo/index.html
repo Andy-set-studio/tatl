@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Tatl Demo</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" media="all" href="https://rawgit.com/hankchizljaw/boilerform/master/dist/css/boilerform.min.css" />
+  </head>
+  <body>
+    <form class="boilerform" action="" method="post">
+      <fieldset class="form">
+        <legend class="form__heading">Tatl Demo</legend>
+        <div class="form__row">
+          <label for="name" class="c-label">Name</label>
+          <input-field type="text" id="name" class-name="c-input-field" required="true" other-attributes='{"autocorrect": "off"}'> </input-field>
+        </div>
+        <div class="form__row">
+          <label for="email" class="c-label">Email</label>
+          <input-field type="email" id="email" class-name="c-input-field" required="true" other-attributes='{"autocorrect": "off", "autocapitalize": "none"}'> </input-field>
+        </div>
+        <div class="form__row">
+          <label for="message" class="c-label">Your message</label>
+          <textarea name="message" id="message" class="c-input-field c-input-field--multiline" rows="10"></textarea>
+        </div>
+        <div class="form__row">
+          <button class="c-button" type="submit">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+    <script src="/js/main.js" type="module"></script>
+  </body>
+</html>
