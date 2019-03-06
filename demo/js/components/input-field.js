@@ -9,8 +9,12 @@ class InputField extends Tatl {
           type: String,
           required: true
         },
-        id: {
-          tyep: String,
+        identifier: {
+          type: String,
+          required: true
+        },
+        label: {
+          type: String,
           required: true
         },
         className: {
@@ -44,11 +48,21 @@ class InputField extends Tatl {
         }
       },
       render() {
-        const {type, id, className} = this.props;
+        const {label, type, identifier, className} = this.props;
         const {requiredAttribute, otherAttributes} = this.get;
 
+        const labelElem = `<label for="${identifier}" class="c-label">${label}</label>`;
+
+        if (type === 'multiline') {
+          return html`
+            ${labelElem}
+            <textarea name="${identifier}" id="${identifier}" class="${className}" ${requiredAttribute} ${otherAttributes}></textarea>
+          `;
+        }
+
         return html`
-          <input type="${type}" name="${id}" id="${id}" class="${className}" ${requiredAttribute} ${otherAttributes} />
+          ${labelElem}
+          <input type="${type}" name="${identifier}" id="${identifier}" class="${className}" ${requiredAttribute} ${otherAttributes} />
         `;
       }
     });

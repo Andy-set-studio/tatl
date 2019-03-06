@@ -12,16 +12,13 @@
       <fieldset class="form">
         <legend class="form__heading">Tatl Demo</legend>
         <div class="form__row">
-          <label for="name" class="c-label">Name</label>
-          <input-field type="text" id="name" class-name="c-input-field" required="true" other-attributes='{"autocorrect": "off"}'> </input-field>
+          <input-field type="text" identifier="name" label="Name" class-name="c-input-field" required="true" other-attributes='{"autocorrect": "off"}'></input-field>
         </div>
         <div class="form__row">
-          <label for="email" class="c-label">Email</label>
-          <input-field type="email" id="email" class-name="c-input-field" required="true" other-attributes='{"autocorrect": "off", "autocapitalize": "none"}'> </input-field>
+          <input-field type="email" identifier="email" label="Email" class-name="c-input-field" required="true" other-attributes='{"autocorrect": "off", "autocapitalize": "none"}'></input-field>
         </div>
         <div class="form__row">
-          <label for="message" class="c-label">Your message</label>
-          <textarea name="message" id="message" class="c-input-field c-input-field--multiline" rows="10"></textarea>
+          <input-field type="multiline" identifier="message" label="Message" class-name="c-input-field c-input-field--multiline"></input-field>
         </div>
         <div class="form__row">
           <button class="c-button" type="submit">Submit</button>
