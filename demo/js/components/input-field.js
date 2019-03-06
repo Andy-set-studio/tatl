@@ -3,7 +3,6 @@ import {componentLoader, html, Tatl} from '../tatl.js';
 class InputField extends Tatl {
   constructor() {
     super({
-      tagName: 'input-field',
       props: {
         type: {
           type: String,
