@@ -5,7 +5,7 @@
   "main": "dist/tatl.js",
   "scripts": {
     "dev:demo": "http-server demo",
-    "prod:build": "node bundler.js"
+    "prod:build": "uglifyjs --compress --mangle --output dist/tatl.js -- src/tatl.js && cp dist/tatl.js demo/js/tatl.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +18,7 @@
     "url": "https://github.com/andybelldesign/tatl/issues"
   },
   "homepage": "https://github.com/andybelldesign/tatl#readme",
-  "dependencies": {
-    "lit-html": "^1.0.0",
-    "rollup": "^1.4.1",
-    "rollup-plugin-uglify-es": "0.0.1"
-  },
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "uglify-es": "^3.3.9"
   }
 }

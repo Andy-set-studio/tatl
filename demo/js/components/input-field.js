@@ -1,4 +1,4 @@
-import Tatl, {componentLoader} from '../tatl.js';
+import {componentLoader, html, Tatl} from '../tatl.js';
 
 class InputField extends Tatl {
   constructor() {
@@ -47,15 +47,9 @@ class InputField extends Tatl {
         const {type, id, className} = this.props;
         const {requiredAttribute, otherAttributes} = this.get;
 
-        return `
-          <input type="${type}"
-                name="${id}"
-                id="${id}"
-                class="${className}"
-                ${requiredAttribute}
-                ${otherAttributes}
-          />
-      `;
+        return html`
+          <input type="${type}" name="${id}" id="${id}" class="${className}" ${requiredAttribute} ${otherAttributes} />
+        `;
       }
     });
   }
