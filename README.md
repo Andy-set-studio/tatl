@@ -36,15 +36,15 @@ class MyComponent extends Tatl {
         }
       },
       state: {
-	      greeting: 'Hello'
+        greeting: 'Hello'
       },
       render() {
-	      const {greeting} = this.state;
-	      const {personName} = this.props;
-	      
+        const {greeting} = this.state;
+        const {personName} = this.props;
+        
         return html`
           <p>
-	           ${greeting}, there! My name is ${personName}
+             ${greeting}, there! My name is ${personName}
           </p>
         `;
       }
@@ -86,14 +86,14 @@ You'll need to define your prop types, too, like so:
 
 ```javascript
 props: {
-	className: {
-	  type: String,
-	  default: null
-	},
-	required: {
-	  type: Boolean,
-	  default: false
-	}
+  className: {
+    type: String,
+    default: null
+  },
+  required: {
+    type: Boolean,
+    default: false
+  }
 }
 ``` 
 
@@ -114,10 +114,10 @@ Getters are computed functions that are used like props in your templates.
 ```
 // Config object
 get: {
-	myGetter() {
-		const name = 'Andy';
-		return `Hello, I'm ${name}`;
-	}
+  myGetter() {
+    const name = 'Andy';
+    return `Hello, I'm ${name}`;
+  }
 }
 ```
 
