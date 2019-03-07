@@ -28,7 +28,7 @@ Then you can author your component like so:
 **my-component.js**
 
 ```javascript
-const myComponent = tatl({
+const myComponent = tatl('my-component', {
   props: {
     personName: {
       type: String,
