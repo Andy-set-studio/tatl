@@ -20,7 +20,7 @@ Import Tatl, the HTML helper and the component loader into your component file:
 **my-component.js**
 
 ```javascript
-import {componentLoader, html, Tatl} from 'tatl';
+import {html, tatl} from 'tatl';
 ```
 
 Then you can author your component like so: 
@@ -28,34 +28,29 @@ Then you can author your component like so:
 **my-component.js**
 
 ```javascript
-class MyComponent extends Tatl {
-  constructor() {
-    super({
-      props: {
-        personName: {
-          type: String,
-          required: true
-        }
-      },
-      state: {
-        greeting: 'Hello'
-      },
-      render() {
-        const {greeting} = this.state;
-        const {personName} = this.props;
-        
-        return html`
-          <p>
-             ${greeting}, there! My name is ${personName}
-          </p>
-        `;
-      }
-    });
+const myComponent = tatl({
+  props: {
+    personName: {
+      type: String,
+      required: true
+    }
+  },
+  state: {
+    greeting: 'Hello'
+  },
+  render() {
+    const {greeting} = this.state;
+    const {personName} = this.props;
+    
+    return html`
+      <p>
+         ${greeting}, there! My name is ${personName}
+      </p>
+    `;
   }
-}
+});
 
-componentLoader('my-component', MyComponent);
-export default MyComponent;
+export default myComponent;
 ```
 
 **index.html**
@@ -129,5 +124,5 @@ You can see a getter in action in the [demo component](https://github.com/andybe
 
 - [ ] 📝 Write some proper docs
 - [ ] 🏗 Implement a better HTML rendering setup, rather than `innerHTML = this.render()` 🙈
-- [ ] 🏗 Find a way of auto loading components, rather than using the `componentLoader`
+- [x] 🏗 Find a way of auto loading components, rather than using the `componentLoader`
 - [ ] 🏗 Create more comprehensive demos

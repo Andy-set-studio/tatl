@@ -1,4 +1,4 @@
-class Tatl extends HTMLElement {
+class BaseComponent extends HTMLElement {
   constructor(props) {
     super();
 
@@ -245,17 +245,30 @@ class Tatl extends HTMLElement {
 }
 
 /**
- * A loader that feature detects customElements before it tries to
- * attach the passed component to the DOM
+ * Tatl loader
+ * This constructs and returns a new BaseComponent
+ * and also defines the custom element, if supported
  *
  * @param {String} tagName
- * @param {function} componentInstance
- * @returns {null}
+ * @param {Object} props
+ * @returns {BaseComponent}
  */
-function componentLoader(tagName, componentInstance) {
+function tatl(tagName, props) {
+  
+  // We can't directly run new BaseComponent, because we'll 
+  // get an illegal constructor error, so we instead create
+  // a local class 
+  const tatlInstance = class TatlComponent extends BaseComponent {
+    constructor() {
+      super(props);
+    }
+  };
+
   if ('customElements' in window) {
-    customElements.define(tagName, componentInstance);
+    customElements.define(tagName, tatlInstance);
   }
+
+  return tatlInstance;
 }
 
 /**
@@ -274,4 +287,4 @@ function html(strings, ...values) {
   return response;
 }
 
-export {Tatl, componentLoader, html};
+export {html, tatl};
