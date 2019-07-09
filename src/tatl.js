@@ -280,11 +280,7 @@ function tatl(tagName, props) {
  * @returns {String}
  */
 function html(strings, ...values) {
-  let response = '';
-  strings.forEach((string, i) => {
-    response += string + (values[i] || '');
-  });
-  return response;
+  return strings.reduce((response, string, i) => response += string + (values[i] || ''), '');
 }
 
 export {html, tatl};
